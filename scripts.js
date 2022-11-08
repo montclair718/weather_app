@@ -1,6 +1,6 @@
 'use strict';
 
-document.body.style.backgroundColor = '#8E2DE2'
+document.body.style.background = '#8E2DE2'
 let container = document.createElement('div')
 document.body.append(container)
 container.style.padding = '40px'
@@ -14,7 +14,7 @@ let table = document.createElement('p')
 container.append(title_h1)
 container.append(table)
 
-const x = document.getElementById('#demo')
+
 function getLocation() {
     if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -24,8 +24,9 @@ function getLocation() {
 }
 
 
-function showPosition() {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-"<br>Longitude: " + position.coords.longitude; 
+function showPosition(position) {
+   table.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
 }
 window.onload = getLocation()
+
